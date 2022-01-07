@@ -1,4 +1,4 @@
-<h1 align="center">NestJS ACL</h1>
+<h1 align="center">NestJS Simple ACL</h1>
 
 <p align="center">
   A simple easy to use access control level module for NestJS
@@ -12,12 +12,12 @@
 
 ## Description
 
-[Nest ACL](https://github.com/guilopesn/nestjs-acl) framework TypeScript starter repository [Nest](https://github.com/nestjs/nest).
+[Nest Simple ACL](https://github.com/guilopesn/nestjs-simple-acl) framework TypeScript starter repository [Nest](https://github.com/nestjs/nest).
 
 ## Installation
 
 ```bash
-$ npm install nestjs-acl
+$ npm install nestjs-simple-acl
 ```
 
 ## Test
@@ -39,4 +39,4 @@ $ npm run test:cov
 
 ## License
 
-NestJS ACL [MIT licensed](LICENSE).
+NestJS Simple ACL [MIT licensed](LICENSE).
