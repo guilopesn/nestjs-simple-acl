@@ -5,7 +5,8 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/guilopesn/nestjs-simple-acl/actions" target="_blank"><img src="https://github.com/guilopesn/nestjs-simple-acl/actions/workflows/build-and-test.yml/badge.svg?branch=master" alt="CI Status" /></a>
+  <a href="https://github.com/guilopesn/nestjs-simple-acl/actions" target="_blank"><img src="https://github.com/guilopesn/nestjs-simple-acl/actions/workflows/analyse-code-quality.yml/badge.svg" alt="Code Quality Status" /></a>
+  <a href="https://github.com/guilopesn/nestjs-simple-acl/actions" target="_blank"><img src="https://github.com/guilopesn/nestjs-simple-acl/actions/workflows/build-and-test.yml/badge.svg?branch=master" alt="Test Status" /></a>
   <a href="https://www.npmjs.com/~guilopesn" target="_blank"><img src="https://img.shields.io/npm/v/nestjs-simple-acl.svg" alt="NPM Version" /></a>
   <a href="https://www.npmjs.com/~guilopesn" target="_blank"><img src="https://img.shields.io/npm/l/nestjs-simple-acl.svg" alt="Package License" /></a>
   <a href="https://www.npmjs.com/~guilopesn" target="_blank"><img src="https://img.shields.io/npm/dm/nestjs-simple-acl.svg" alt="NPM Downloads" /></a>
