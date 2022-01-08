@@ -14,6 +14,8 @@ export class AuthorizationGuard implements CanActivate {
       context.getHandler()
     );
 
+    if (!requiredAuthorization) return true;
+
     if(!ACLModule.hasRegisteredAuthorizations(requiredAuthorization)) throw new InternalServerErrorException('Required authorization is not registered on module')
 
     const request: Request = context.switchToHttp().getRequest();
