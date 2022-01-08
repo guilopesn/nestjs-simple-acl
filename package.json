@@ -1,6 +1,6 @@
 {
   "name": "nestjs-simple-acl",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "NestJS module for Access Control Level support",
   "author": "Guilherme Nogueira <guilherme.lopesn@gmail.com>",
   "repository": "https://github.com/guilopesn/nestjs-simple-acl",
