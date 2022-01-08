@@ -3,7 +3,7 @@ on:
   release:
     types: [created]
 jobs:
-  build:
+  build-test-and-publish-to-npmjs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -13,7 +13,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       - run: npm install
       - run: npm run build
-      - run: npm test:e2e
+      - run: npm run test:e2e
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
