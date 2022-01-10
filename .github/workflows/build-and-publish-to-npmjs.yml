@@ -1,0 +1,24 @@
+name: Build and Publish Package to npmjs
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  build-and-publish-to-npmjs:
+    name: Build and Publish Package to npmjs
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Build and Publish Package to npmjs
+      uses: actions/setup-node@v2
+      with:
+        node-version: 14
+        registry-url: 'https://registry.npmjs.org'
+    - run: npm install
+    - run: npm run build
+    - run: npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
