@@ -1,5 +1,5 @@
-import { AuthorizationStrategy } from '../lib/interfaces/authorization-strategy.interface';
-import { Request } from 'express';
+import { AuthorizationStrategy } from "../src/interfaces";
+import { Request } from "express";
 
 export class TestStrategy implements AuthorizationStrategy {
   isAuthorized(request: Request, requiredAuthorization: string): boolean {
@@ -7,9 +7,7 @@ export class TestStrategy implements AuthorizationStrategy {
 
     if (!requiredAuthorization) return true;
 
-    if (
-      requestAuthorization === requiredAuthorization
-    ) {
+    if (requestAuthorization === requiredAuthorization) {
       return true;
     }
   }

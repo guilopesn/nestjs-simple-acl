@@ -1,4 +1,9 @@
-import { CanActivate, ExecutionContext, Injectable, InternalServerErrorException } from "@nestjs/common";
+import {
+  CanActivate,
+  ExecutionContext,
+  Injectable,
+  InternalServerErrorException,
+} from "@nestjs/common";
 import { Reflector } from "@nestjs/core";
 import { Request } from "express";
 import { ACLModule } from "..";
@@ -16,10 +21,16 @@ export class AuthorizationGuard implements CanActivate {
 
     if (!requiredAuthorization) return true;
 
-    if(!ACLModule.hasRegisteredAuthorizations(requiredAuthorization)) throw new InternalServerErrorException('Required authorization is not registered on module')
+    if (!ACLModule.hasRegisteredAuthorizations(requiredAuthorization))
+      throw new InternalServerErrorException(
+        "Required authorization is not registered on module"
+      );
 
     const request: Request = context.switchToHttp().getRequest();
 
-    return ACLModule.getAuthorizationStrategy().isAuthorized(request, requiredAuthorization);
+    return ACLModule.getAuthorizationStrategy().isAuthorized(
+      request,
+      requiredAuthorization
+    );
   }
 }
