@@ -1,0 +1,8 @@
+.github
+src
+tests
+package-lock.json
+yarn.lock
+tsconfig.json
+tsconfig.build.json
+tsconfig.build.tsbuildinfo
