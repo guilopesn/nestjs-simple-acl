@@ -1,1 +1,1 @@
-export * from "./required-authorization.decorator";
+export * from './required-authorization.decorator';

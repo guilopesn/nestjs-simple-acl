@@ -1,6 +1,6 @@
-import { Module, DynamicModule } from "@nestjs/common";
-import { ACLModuleOptions } from "./interfaces/acl-module-options.interface";
-import { AuthorizationStrategy } from "./interfaces/authorization-strategy.interface";
+import { Module, DynamicModule } from '@nestjs/common';
+import { ACLModuleOptions } from './interfaces/acl-module-options.interface';
+import { AuthorizationStrategy } from './interfaces/authorization-strategy.interface';
 
 @Module({
   imports: [],
@@ -33,12 +33,12 @@ export class ACLModule {
   }
 
   public static registerAuthorizations(
-    authorizationsToRegister: any[]
+    authorizationsToRegister: any[],
   ): DynamicModule {
     authorizationsToRegister.forEach((authorizationToRegister) => {
       ACLModule.registeredAuthorizations =
         ACLModule.registeredAuthorizations.concat(
-          Object.values(authorizationToRegister)
+          Object.values(authorizationToRegister),
         );
     });
 

@@ -1,8 +1,8 @@
-import { Module } from "@nestjs/common";
-import { ACLModule } from "../src";
-import { TestAuthorizations } from "./test.authorizations";
-import { TestController } from "./test.controller";
-import { TestStrategy } from "./test.strategy";
+import { Module } from '@nestjs/common';
+import { ACLModule } from '../src';
+import { TestAuthorizations } from './test.authorizations';
+import { TestController } from './test.controller';
+import { TestStrategy } from './test.strategy';
 
 @Module({
   imports: [

@@ -3,5 +3,7 @@ src
 tests
 package-lock.json
 yarn.lock
+.eslintrc.js
+.prettierrc
 tsconfig.json
 tsconfig.build.json
