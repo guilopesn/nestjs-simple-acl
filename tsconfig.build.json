@@ -3,13 +3,11 @@
   "compilerOptions": {
     "outDir": "./dist"
   },
-  "include": [
-    "src/**/*"
-  ],
+  "include": ["src/**/*"],
   "exclude": [
-    "node_modules", 
-    "dist", 
-    "tests", 
+    "node_modules",
+    "dist",
+    "tests",
     "**/*.spec.ts",
     "**/*.e2e-spec.ts"
   ]

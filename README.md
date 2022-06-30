@@ -40,7 +40,7 @@ export class Roles {
 **user.model.ts**
 
 ```typescript
-import { Role } from './role.model';
+import { Role } from "./role.model";
 
 export class User {
   name: string;
@@ -55,9 +55,9 @@ If you are using the JWT authentication approach with Passport.js, this guard sh
 **role-authorization.strategy.ts**
 
 ```typescript
-import { Request } from 'express';
-import { AuthorizationStrategy } from 'nestjs-simple-acl';
-import { User } from './user.model';
+import { Request } from "express";
+import { AuthorizationStrategy } from "nestjs-simple-acl";
+import { User } from "./user.model";
 
 export class RoleAuthorizationStrategy implements AuthorizationStrategy {
   isAuthorized(request: Request, requiredAuthorization: string): boolean {
@@ -67,7 +67,7 @@ export class RoleAuthorizationStrategy implements AuthorizationStrategy {
     if (
       // Checks if required authorization is present on user's role authorizations
       user.role.authorizations.some(
-        authorization => authorization.name === requiredAuthorization,
+        (authorization) => authorization.name === requiredAuthorization
       )
     ) {
       // If so, grant access
@@ -85,10 +85,10 @@ Now you import ACLModule on app.module.js.
 **app.module.ts**
 
 ```typescript
-import { DynamicModule, Module } from '@nestjs/common';
-import { TypeOrmModule } from '@nestjs/typeorm';
-import { ACLModule } from 'nestjs-simple-acl';
-import { RoleAuthorizationStrategy } from './strategies/role.strategy';
+import { DynamicModule, Module } from "@nestjs/common";
+import { TypeOrmModule } from "@nestjs/typeorm";
+import { ACLModule } from "nestjs-simple-acl";
+import { RoleAuthorizationStrategy } from "./strategies/role.strategy";
 
 @Module({
   imports: [
@@ -111,8 +111,8 @@ You will need to create ENUM containing your app's or module's authorizations li
 
 ```typescript
 export enum TestAuthorizations {
-  SEARCH = 'SEARCH',
-  CREATE = 'CREATE'
+  SEARCH = "SEARCH",
+  CREATE = "CREATE",
 }
 ```
 
@@ -121,10 +121,10 @@ Then you need to register the authorizations on ACLModule.
 **app.module.ts**
 
 ```typescript
-import { DynamicModule, Module } from '@nestjs/common';
-import { TypeOrmModule } from '@nestjs/typeorm';
-import { ACLModule } from 'nestjs-simple-acl';
-import { RoleAuthorizationStrategy } from './strategies/role.strategy';
+import { DynamicModule, Module } from "@nestjs/common";
+import { TypeOrmModule } from "@nestjs/typeorm";
+import { ACLModule } from "nestjs-simple-acl";
+import { RoleAuthorizationStrategy } from "./strategies/role.strategy";
 import { TestAuthorizations } from "./test.authorizations";
 
 @Module({
@@ -151,20 +151,19 @@ import { AuthorizationGuard, RequiredAuthorization } from "nest-simple-acl";
 import { TestAuthorizations } from "./test.authorizations";
 
 @UseGuards(AuthorizationGuard)
-@Controller('test')
+@Controller("test")
 export class TestController {
-    
-    @RequiredAuthorization(TestAuthorizations.SEARCH)
-    @Get()
-    async search(): Promise<string> {
-        return 'Ok';
-    }
+  @RequiredAuthorization(TestAuthorizations.SEARCH)
+  @Get()
+  async search(): Promise<string> {
+    return "Ok";
+  }
 
-    @RequiredAuthorization(TestAuthorizations.CREATE)
-    @Post()
-    async create(): Promise<string> {
-        return 'Ok';
-    }
+  @RequiredAuthorization(TestAuthorizations.CREATE)
+  @Post()
+  async create(): Promise<string> {
+    return "Ok";
+  }
 }
 ```
 
