@@ -1,15 +1,15 @@
 {
   "name": "nestjs-simple-acl",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "NestJS module for Access Control Level support",
   "author": "Guilherme Nogueira <guilherme.lopesn@gmail.com>",
   "repository": "https://github.com/guilopesn/nestjs-simple-acl",
-  "private": false,
   "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "private": false,
   "scripts": {
     "build": "rimraf ./dist && tsc -p tsconfig.build.json",
-    "lint": "eslint \"src/**/*.ts\" --fix",
-    "format": "prettier --write \"src/**/*.ts\" \"tests/**/*.ts\"",
     "test:e2e": "jest --config tests/jest.e2e.config.json"
   },
   "devDependencies": {
