@@ -1,5 +1,5 @@
-import { AuthorizationStrategy } from "../src/interfaces";
-import { Request } from "express";
+import { AuthorizationStrategy } from '../src/interfaces';
+import { Request } from 'express';
 
 export class TestStrategy implements AuthorizationStrategy {
   isAuthorized(request: Request, requiredAuthorization: string): boolean {

@@ -1,9 +1,9 @@
-import { Test, TestingModule } from "@nestjs/testing";
-import { INestApplication } from "@nestjs/common";
-import * as request from "supertest";
-import { TestModule } from "./test.module";
+import { Test, TestingModule } from '@nestjs/testing';
+import { INestApplication } from '@nestjs/common';
+import * as request from 'supertest';
+import { TestModule } from './test.module';
 
-describe("TestController (e2e)", () => {
+describe('TestController (e2e)', () => {
   let app: INestApplication;
 
   beforeEach(async () => {
@@ -15,22 +15,22 @@ describe("TestController (e2e)", () => {
     await app.init();
   });
 
-  it("Should authorize access with valid authorization", () => {
+  it('Should authorize access with valid authorization', () => {
     return request(app.getHttpServer())
-      .get("/test")
-      .set("Authorization", "TEST_GET")
+      .get('/test')
+      .set('Authorization', 'TEST_GET')
       .expect(200)
-      .expect("Ok");
+      .expect('Ok');
   });
 
-  it("Should not authorize access with invalid authorization", () => {
+  it('Should not authorize access with invalid authorization', () => {
     return request(app.getHttpServer())
-      .get("/test")
-      .set("Authorization", "TEST_POST")
+      .get('/test')
+      .set('Authorization', 'TEST_POST')
       .expect(403);
   });
 
-  it("Should not authorize access without authorization", () => {
-    return request(app.getHttpServer()).get("/test").expect(403);
+  it('Should not authorize access without authorization', () => {
+    return request(app.getHttpServer()).get('/test').expect(403);
   });
 });
